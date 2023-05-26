@@ -4,6 +4,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 
 const mcdonaldsRouter = require("./routes/api/mcdonalds");
+const kfcRouter = require("./routes/api/kfc");
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/mcdonalds", mcdonaldsRouter);
+app.use("/api/kfc", kfcRouter);
 
 app.use((req, res) => {
   res.status(404).json({ message: "Not found" });

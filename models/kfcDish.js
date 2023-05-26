@@ -3,7 +3,7 @@ const Joi = require("joi");
 const { handleMongooseError } = require("../utils");
 const { HttpError } = require("../utils");
 
-const mcdonaldsDishSchema = new Schema(
+const kfcDishSchema = new Schema(
   {
     title: {
       type: String,
@@ -37,7 +37,7 @@ const mcdonaldsDishSchema = new Schema(
   { versionKey: false, timestamps: true }
 );
 
-mcdonaldsDishSchema.post("save", handleMongooseError);
+kfcDishSchema.post("save", handleMongooseError);
 
 const schema = Joi.object({
   title: Joi.string().min(3).max(50).trim().required(),
@@ -57,6 +57,6 @@ const updateFavoriteSchema = Joi.object({
 
 const schemas = { schema, updateFavoriteSchema };
 
-const McdonaldsDish = model("mcdonaldsDish", mcdonaldsDishSchema);
+const KfcDish = model("kfcDish", kfcDishSchema);
 
-module.exports = { McdonaldsDish, schemas };
+module.exports = { KfcDish, schemas };

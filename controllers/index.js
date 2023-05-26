@@ -7,6 +7,15 @@ const {
   removeMcdonaldsDish,
 } = require("./mcdonalds/index");
 
+const {
+  getKfcDishes,
+  getKfcDishById,
+  addKfcDish,
+  updateKfcDish,
+  updateStatusKfcDish,
+  removeKfcDish,
+} = require("./kfc/index");
+
 module.exports = {
   getMcdonaldsDishes,
   getMcdonaldsDishById,
@@ -14,4 +23,10 @@ module.exports = {
   updateMcdonaldsDish,
   updateStatusMcdonaldsDish,
   removeMcdonaldsDish,
+  getKfcDishes,
+  getKfcDishById,
+  addKfcDish,
+  updateKfcDish,
+  updateStatusKfcDish,
+  removeKfcDish,
 };
