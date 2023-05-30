@@ -5,6 +5,7 @@ const dotenv = require("dotenv");
 
 const mcdonaldsRouter = require("./routes/api/mcdonalds");
 const kfcRouter = require("./routes/api/kfc");
+const salateiraRouter = require("./routes/api/salateira");
 
 dotenv.config();
 
@@ -18,6 +19,7 @@ app.use(express.json());
 
 app.use("/api/mcdonalds", mcdonaldsRouter);
 app.use("/api/kfc", kfcRouter);
+app.use("/api/salateira", salateiraRouter);
 
 app.use((req, res) => {
   res.status(404).json({ message: "Not found" });
